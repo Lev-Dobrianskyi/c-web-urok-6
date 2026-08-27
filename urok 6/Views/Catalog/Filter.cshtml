@@ -1,0 +1,14 @@
+﻿<form method="get" action="@Url.Action("Filter", "Catalog", new { category = ViewBag.Category })">
+    <input type="number" name="minPrice" />
+    <input type="number" name="maxPrice" />
+    <button type="submit">Submit</button>
+</form>
+<p>Категорія: @ViewBag.Category</p>
+@if (ViewBag.MinPrice > 0 || ViewBag.MaxPrice > 0)
+{
+    <p>@ViewBag.MinPrice - @ViewBag.MaxPrice</p>
+}
+else
+{
+    <p>You cant have negative prices btw</p>
+}
